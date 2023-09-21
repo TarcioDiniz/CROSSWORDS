@@ -22,7 +22,7 @@ public class Main {
         }
 
         ChatGPT chatGPT = new ChatGPT(apiKey);
-        var respostas = chatGPT.Search("biologia", 20);
+        var respostas = chatGPT.Search("animal", 20);
         //System.out.println(respostas);
         ArrayList<Word> words = new ArrayList<>();
         respostas.forEach(resposta -> {
