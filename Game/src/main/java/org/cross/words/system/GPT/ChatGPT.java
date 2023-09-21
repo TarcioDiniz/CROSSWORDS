@@ -16,7 +16,7 @@ public class ChatGPT {
         }
     }
 
-    public String Search(String knowledgeArea, int numQuestions) {
+    public ArrayList<String> Search(String knowledgeArea, int numQuestions) {
 
         OpenAiService service = new OpenAiService(this.API_KEY);
 
@@ -30,23 +30,12 @@ public class ChatGPT {
 
         ArrayList<String> responses = new ArrayList<>();
 
-        service.createCompletion(request).getChoices().forEach(choice -> responses.add(cleanString(choice.getText())));
-        responses.forEach(System.out::println);
-        System.out.println(responses);
+        service.createCompletion(request).getChoices().forEach(System.out::println);
 
-        return "response";
+
+        return responses;
     }
 
 
-    private static String cleanString(String text) {
-        // Use uma expressão regular para encontrar e remover o número seguido de um ponto ou hífen e um espaço no início da string
-        text = text.replaceFirst("^(\\d+\\.\\s*|\\d+\\-\\s*)", "");
-        return text;
-    }
-
-    public static String[] transformarEmArray(String listaPalavras) {
-        // Use o método split para dividir a lista de palavras em um array
-        return listaPalavras.split(",\\s*");
-    }
 
 }

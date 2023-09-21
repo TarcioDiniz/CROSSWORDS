@@ -1,7 +1,6 @@
 package org.cross.words.Utilities;
 
 public class Vector2D {
-
     public double x;
     public double y;
 
