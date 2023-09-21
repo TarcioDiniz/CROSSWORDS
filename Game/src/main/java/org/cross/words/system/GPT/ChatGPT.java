@@ -4,7 +4,11 @@ import com.theokanning.openai.completion.CompletionRequest;
 import com.theokanning.openai.service.OpenAiService;
 import org.cross.words.settings.GPT_Config;
 
+
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class ChatGPT {
 
@@ -29,13 +33,19 @@ public class ChatGPT {
                 .build();
 
         ArrayList<String> responses = new ArrayList<>();
+        service.createCompletion(request).getChoices().forEach(choice -> {
 
-        service.createCompletion(request).getChoices().forEach(System.out::println);
-
+            List<String> words = Arrays.asList(cleanString(choice.getText()).split("\\s+"));
+            responses.addAll(words);
+        });
 
         return responses;
     }
 
 
+    private String cleanString(String text) {
+
+        return text;
+    }
 
 }
