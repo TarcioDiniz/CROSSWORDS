@@ -3,6 +3,7 @@
     import org.cross.words.Utilities.Vector2D;
 
     import java.util.ArrayList;
+    import java.util.List;
 
     public class Word {
 
@@ -21,7 +22,7 @@
             }
         }
 
-        private static boolean isWord(String text) {
+        public static boolean isWord(String text) {
             text = text.trim();
             if (text.isEmpty()) {
                 return false;
@@ -53,5 +54,13 @@
                 }
             }
             return false;
+        }
+
+        public static void removeWhitespace(ArrayList<String> stringList) {
+            for (int i = 0; i < stringList.size(); i++) {
+                String originalString = stringList.get(i);
+                String stringWithoutWhitespace = originalString.replaceAll("\\s+", " ");
+                stringList.set(i, stringWithoutWhitespace);
+            }
         }
     }
