@@ -1,13 +1,15 @@
-package org.cross.words.core;
+package org.cross.words.core.controller;
 
 
 import org.cross.words.core.match.Matches;
 import org.cross.words.core.matrix.Matrix;
 import org.cross.words.core.matrix.MatrixState;
 import org.cross.words.core.word.Word;
+import org.cross.words.design.MatrixDesign;
+import org.cross.words.design.PositionValue;
 
 import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.List;
 import java.util.Objects;
 
 public class Controller {
@@ -53,17 +55,19 @@ public class Controller {
 
             });
         });
+        List<PositionValue> positionValues = new ArrayList<>();
+        var WordsEntered = matrixState.getCurrentState().getWordsEntered();
 
-        Matrix.printBoard(matrixState.getCurrentState().getMatrix());
+        for (int i = 0; i < WordsEntered.size(); i++) {
+            var word = WordsEntered.get(i);
+            var positionWord = word.getVector2DArrayList().get(0);
+            PositionValue positionValue = new PositionValue((int) positionWord.x, (int) positionWord.y, i);
+            positionValues.add(positionValue);
+        }
 
-//       matrixState
-//               .getCurrentState()
-//               .getWordsEntered()
-//                .get(0)
-//               .getVector2DArrayList()
-//                .forEach(vector2D -> {
-//                    System.out.println(Arrays.toString(vector2D.getX_Y()));
-//                });
+        MatrixDesign.printBoard(matrixInit.getMatrix(), positionValues);
+
+
 
 
     }

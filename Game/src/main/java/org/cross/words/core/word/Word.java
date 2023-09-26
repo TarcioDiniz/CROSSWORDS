@@ -11,6 +11,8 @@
         private int size;
         private ArrayList<Vector2D> vector2DArrayList;
 
+        private String question;
+
         public Word(String word) {
             setWord(word);
         }
@@ -62,5 +64,13 @@
                 String stringWithoutWhitespace = originalString.replaceAll("\\s+", " ");
                 stringList.set(i, stringWithoutWhitespace);
             }
+        }
+
+        public String getQuestion() {
+            return question;
+        }
+
+        public void setQuestion(String question) {
+            this.question = question;
         }
     }

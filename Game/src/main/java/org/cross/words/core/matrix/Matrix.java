@@ -3,7 +3,7 @@ package org.cross.words.core.matrix;
 import org.cross.words.Utilities.Direction;
 import org.cross.words.Utilities.Vector2D;
 
-import org.cross.words.core.Controller;
+import org.cross.words.core.controller.Controller;
 import org.cross.words.core.word.Word;
 
 import java.util.ArrayList;
@@ -75,8 +75,8 @@ public class Matrix {
                                     var centralPosition = vector2DArrayList.get(integer);
                                     var centralChar = word1.getWord().charAt(integer);
 
-                                    var calculatePositions1 = calculatePositions(copiarMatrizChar(matrix), word2.getWord(), (int) centralPosition.x, (int) centralPosition.y, direction1);
-                                    var calculatePositions2 = calculatePositions(copiarMatrizChar(matrix), word2.getWord(), (int) centralPosition.x, (int) centralPosition.y, direction2);
+                                    var calculatePositions1 = calculatePositions(copyMatrixChar(matrix), word2.getWord(), (int) centralPosition.x, (int) centralPosition.y, direction1);
+                                    var calculatePositions2 = calculatePositions(copyMatrixChar(matrix), word2.getWord(), (int) centralPosition.x, (int) centralPosition.y, direction2);
 
                                     if (isPositionValid(calculatePositions1, centralPosition.getX_Y())) {
                                         if (calculatePositions1.size() == word2.getSize()) {
@@ -210,35 +210,35 @@ public class Matrix {
         word.setVector2DArrayList(vector2DS);
     }
 
-    public static void printBoard(char[][] matrix) {
-        boolean[] printRow = new boolean[matrix.length];
-        boolean[] printColumn = new boolean[matrix[0].length];
-
-        for (int i = 0; i < matrix.length; i++) {
-            printRow[i] = false;
-            for (int j = 0; j < matrix[i].length; j++) {
-                if (matrix[i][j] != '0') {
-                    printRow[i] = true;
-                    printColumn[j] = true;
-                }
-            }
-        }
-
-        for (int i = 0; i < matrix.length; i++) {
-            if (printRow[i]) {
-                for (int j = 0; j < matrix[i].length; j++) {
-                    if (printColumn[j]) {
-                        if (matrix[i][j] == '0') {
-                            System.out.print("  ");
-                        } else {
-                            System.out.print(matrix[i][j] + " ");
-                        }
-                    }
-                }
-                System.out.println();
-            }
-        }
-    }
+//    public static void printBoard(char[][] matrix) {
+//        boolean[] printRow = new boolean[matrix.length];
+//        boolean[] printColumn = new boolean[matrix[0].length];
+//
+//        for (int i = 0; i < matrix.length; i++) {
+//            printRow[i] = false;
+//            for (int j = 0; j < matrix[i].length; j++) {
+//                if (matrix[i][j] != '0') {
+//                    printRow[i] = true;
+//                    printColumn[j] = true;
+//                }
+//            }
+//        }
+//
+//        for (int i = 0; i < matrix.length; i++) {
+//            if (printRow[i]) {
+//                for (int j = 0; j < matrix[i].length; j++) {
+//                    if (printColumn[j]) {
+//                        if (matrix[i][j] == '0') {
+//                            System.out.print("  ");
+//                        } else {
+//                            System.out.print(matrix[i][j] + " ");
+//                        }
+//                    }
+//                }
+//                System.out.println();
+//            }
+//        }
+//    }
 
     public char[][] getMatrix() {
         return matrix;
@@ -266,7 +266,7 @@ public class Matrix {
         }
     }
 
-    public static char[][] copiarMatrizChar(char[][] matrizOriginal) {
+    public static char[][] copyMatrixChar(char[][] matrizOriginal) {
         int linhas = matrizOriginal.length;
         int colunas = matrizOriginal[0].length;
 
