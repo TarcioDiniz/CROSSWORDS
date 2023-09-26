@@ -1,6 +1,7 @@
 package org.cross.words.core.controller;
 
 
+import org.cross.words.Utilities.Difficulty;
 import org.cross.words.core.match.Matches;
 import org.cross.words.core.matrix.Matrix;
 import org.cross.words.core.matrix.MatrixState;
@@ -65,7 +66,10 @@ public class Controller {
             positionValues.add(positionValue);
         }
 
-        MatrixDesign.printBoard(matrixInit.getMatrix(), positionValues);
+        var matrixInitCopy = Matrix.copyMatrixChar(matrixInit.getMatrix());
+        Matrix.replaceNonZeroCharsWithSpace(matrixInitCopy, Difficulty.EASY);
+
+        MatrixDesign.printBoard(matrixInitCopy, positionValues);
 
 
 

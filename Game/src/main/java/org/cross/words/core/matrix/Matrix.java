@@ -1,5 +1,6 @@
 package org.cross.words.core.matrix;
 
+import org.cross.words.Utilities.Difficulty;
 import org.cross.words.Utilities.Direction;
 import org.cross.words.Utilities.Vector2D;
 
@@ -279,6 +280,26 @@ public class Matrix {
         }
 
         return novaMatriz;
+    }
+
+    public static void replaceNonZeroCharsWithSpace(char[][] matrix, Difficulty difficulty) {
+        // Percorre a matriz
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                // Verifica se o caractere não é '0'
+                if (matrix[i][j] != '0') {
+
+                    if (difficulty == Difficulty.EASY){
+                        if (!Word.isVowel(matrix[i][j])){
+                            matrix[i][j] = ' ';
+                        }
+                    }
+
+
+
+                }
+            }
+        }
     }
 
 }
