@@ -47,7 +47,7 @@ public class TOKEN_DAO_Config {
         }
     }
 
-    public String retrieveToken() {
+    public String retrieveToken() throws TokenDaoException {
         try {
             // Retrieve the token from the database (assuming there is only one token)
             String retrieveTokenSQL = "SELECT token FROM tokens LIMIT 1";
@@ -58,12 +58,18 @@ public class TOKEN_DAO_Config {
                     return resultSet.getString("token");
                 }
             }
+            throw new TokenDaoException("Não foi possível encontrar um token no banco de dados.");
         } catch (SQLException e) {
-            e.printStackTrace();
+            throw new TokenDaoException("Erro ao recuperar o token do banco de dados.");
         }
-
-        return null;
     }
+
+    public class TokenDaoException extends Exception {
+        public TokenDaoException(String message) {
+            super(message);
+        }
+    }
+
 
     public void updateToken(String newToken) {
         try {
