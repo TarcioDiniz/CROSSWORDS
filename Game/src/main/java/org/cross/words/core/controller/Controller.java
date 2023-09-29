@@ -19,6 +19,10 @@ public class Controller {
     private final MatrixState matrixState = new MatrixState();
     private static Controller instance;
 
+    private char[][] matrixInitCopy;
+
+    private List<PositionValue> positionValues;
+
     public static Controller getInstance() {
         if (instance == null) {
             instance = new Controller();
@@ -56,7 +60,7 @@ public class Controller {
 
             });
         });
-        List<PositionValue> positionValues = new ArrayList<>();
+        this.positionValues = new ArrayList<>();
         var WordsEntered = matrixState.getCurrentState().getWordsEntered();
 
         for (int i = 0; i < WordsEntered.size(); i++) {
@@ -66,18 +70,22 @@ public class Controller {
             positionValues.add(positionValue);
         }
 
-        var matrixInitCopy = Matrix.copyMatrixChar(matrixInit.getMatrix());
-        Matrix.replaceNonZeroCharsWithSpace(matrixInitCopy, Difficulty.EASY);
-
-        MatrixDesign.printBoard(matrixInitCopy, positionValues);
-
-
+        this.matrixInitCopy = Matrix.copyMatrixChar(matrixInit.getMatrix());
+        Matrix.replaceNonZeroCharsWithSpace(this.matrixInitCopy, Difficulty.EASY);
 
 
     }
 
     public MatrixState getMatrixState() {
         return matrixState;
+    }
+
+    public char[][] getMatrixInitCopy() {
+        return matrixInitCopy;
+    }
+
+    public List<PositionValue> getPositionValues() {
+        return positionValues;
     }
 
     public Matches getMatches() {

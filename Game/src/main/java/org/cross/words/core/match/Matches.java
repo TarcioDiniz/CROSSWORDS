@@ -4,7 +4,6 @@ import org.cross.words.core.word.Word;
 
 import java.util.ArrayList;
 import java.util.Comparator;
-import java.util.List;
 
 public class Matches {
     ArrayList<Word> words;
@@ -15,7 +14,7 @@ public class Matches {
         createMachIndex();
     }
 
-    private ArrayList<Integer> findPositionsOfMatchingCharacters(String str1, String str2) {
+    public static ArrayList<Integer> findPositionsOfMatchingCharacters(String str1, String str2) {
         ArrayList<Integer> positions = new ArrayList<>();
         for (int i = 0; i < str1.length(); i++) {
             for (int j = 0; j < str2.length(); j++) {
