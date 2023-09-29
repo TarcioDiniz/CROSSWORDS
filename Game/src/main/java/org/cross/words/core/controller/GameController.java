@@ -61,6 +61,8 @@ public class GameController {
 
         InputUtil.closeScanner();
 
+        clearConsole();
+        displayMatrix();
         System.out.println(Colors.GREEN_BOLD + "OBRIGADO POR JOGAR O PALAVRA CRUZADA.");
     }
 
@@ -115,7 +117,11 @@ public class GameController {
     private void displayHints() {
         System.out.println("Dicas: ");
         for (int i = 0; i < words.size(); i++) {
-            System.out.println(i + " -> " + words.get(i).getQuestion() + " (" + words.get(i).getSize() + " Letras).");
+            if (checkWordInGameFromMatrixCopy(words.get(i))) {
+                System.out.println(Colors.GREEN_UNDERLINED + "" + i + " -> " + words.get(i).getQuestion() + " (" + words.get(i).getSize() + " Letras)." + Colors.RESET);
+            } else {
+                System.out.println(i + " -> " + words.get(i).getQuestion() + " (" + words.get(i).getSize() + " Letras).");
+            }
         }
     }
 
@@ -132,7 +138,7 @@ public class GameController {
         }
     }
 
-    private boolean theEndGame(){
+    private boolean theEndGame() {
         var originalMatrix = Controller.getInstance().getMatrixState().getCurrentState().getMatrix();
         var copiedMatrix = Controller.getInstance().getMatrixInitCopy();
         // Check if the matrices have the same number of rows and columns
@@ -152,4 +158,34 @@ public class GameController {
         // If no different elements are found, the matrices are equal
         return true;
     }
+
+    private boolean checkWordInGameFromMatrixCopy(Word word) {
+        var matrix = Controller.getInstance().getMatrixInitCopy();
+        var positions = word.getVector2DArrayList();
+
+
+        if (matrix == null || positions == null || word == null) {
+            return false;
+        }
+
+        if (positions.size() != word.getWord().length()) {
+            return false;
+        }
+
+        for (int i = 0; i < positions.size(); i++) {
+            int row = (int) positions.get(i).x;
+            int col = (int) positions.get(i).y;
+
+            if (row < 0 || row >= matrix.length || col < 0 || col >= matrix[0].length) {
+                return false; // Check if the position is within the matrix bounds
+            }
+
+            if (matrix[row][col] != word.getWord().charAt(i)) {
+                return false; // Check if the character at the matrix position matches the character in the word
+            }
+        }
+
+        return true;
+    }
+
 }
