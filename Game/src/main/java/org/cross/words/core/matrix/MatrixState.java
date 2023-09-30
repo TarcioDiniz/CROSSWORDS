@@ -2,6 +2,13 @@ package org.cross.words.core.matrix;
 
 import java.util.ArrayList;
 
+/*
+ *
+ * Class created to store the states of the matrix, helping with the logic
+ * so that every matrix can fit all the given words perfectly.
+ *
+ */
+
 public class MatrixState {
     ArrayList<Matrix> matrices;
     private int currentIndex;

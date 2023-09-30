@@ -5,6 +5,15 @@ import org.cross.words.core.word.Word;
 import java.util.ArrayList;
 import java.util.Comparator;
 
+/*
+ *
+ * This is a class that will take care of "matches" between an array of Words.
+ * It will indicate where each word has the same letters and which ones they are
+ * positions. The aim is to help with the logic of the crossing that will happen in the
+ * Matrix class.
+ *
+ */
+
 public class Matches {
     ArrayList<Word> words;
     ArrayList<MatchIndex> matchIndices = new ArrayList<>();

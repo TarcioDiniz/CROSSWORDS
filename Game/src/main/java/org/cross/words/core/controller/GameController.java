@@ -14,6 +14,26 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Objects;
 
+
+/*
+ *
+ * This class was implemented using the Singleton design pattern.
+ * Therefore, this pattern is used when a single point is needed
+ * for creating a class instance and when we only need one
+ * instance of a class.
+ *
+ * Each Attribute and private method was designed in such a way that it was used
+ * only within this class. On the other hand, the public start method is where the
+ * Main will be used to call all the game logic and its implementation.
+ *
+ * The controls for this project were divided into 2:
+ *
+ * class GameController -> takes care of the game part and all its player logic and menu.
+ * class Controller -> takes care of the assembly and availability of matrices and their
+ * present stages.
+ *
+ */
+
 public class GameController {
 
     private static GameController instance = null;
@@ -131,8 +151,7 @@ public class GameController {
         MatrixDesign.printBoard(matrix, position);
     }
 
-
-    public static void clearConsole() {
+    private static void clearConsole() {
         for (int i = 0; i < 100; i++) {
             System.out.println();
         }

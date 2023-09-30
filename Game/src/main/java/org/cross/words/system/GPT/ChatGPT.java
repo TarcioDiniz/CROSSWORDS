@@ -7,6 +7,17 @@ import org.cross.words.settings.GPT_Config;
 
 import java.util.*;
 
+/*
+ *
+ * This code integrates the functionality of the GPT-3.5 model to
+ * generate random words and their respective questions with
+ * based on a given area of knowledge. The class uses
+ * the OpenAI API for requesting text completions and handling
+ * answers to create words and questions related to
+ * specified topic.
+ *
+ */
+
 public class ChatGPT {
 
     private String API_KEY;

@@ -10,6 +10,17 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+/*
+ *
+ * Class created to generate the board. in it, we can see the behavior
+ * using the overloaded method, of which there are 2 ways to create a matrix:
+ * 1° or the matrix does not exist.
+ * 2° or there is, and you have to pass the matrix you already have.
+ *
+ * In your next methods we see a structure and logic for crossing words.
+ *
+ */
+
 public class Matrix {
     private static final int size = Controller.getInstance().getMatches().getMaxNumberOfLettersInWord() + 100;
     private ArrayList<Word> wordsEntered = new ArrayList<>();

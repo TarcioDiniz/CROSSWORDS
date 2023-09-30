@@ -4,6 +4,13 @@ import org.cross.words.core.word.Word;
 
 import java.util.ArrayList;
 
+/*
+ *
+ * Class created to store 2 Words and their respective matches.
+ * Your attributes are private in order to use encapsulation.
+ *
+ */
+
 public class MatchIndex {
     private Word word1;
     private Word word2;

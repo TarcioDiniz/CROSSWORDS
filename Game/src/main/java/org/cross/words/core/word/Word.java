@@ -4,12 +4,23 @@ import org.cross.words.Utilities.Vector2D;
 
 import java.util.ArrayList;
 
+
+/*
+ *
+ * This class handles operations related to words,
+ * including validity check, handling of
+ * characters and storage of information associated with the
+ * word. The class is well encapsulated and provides methods
+ * useful for these specific tasks.
+ *
+ */
+
+
 public class Word {
 
     private String word;
     private int size;
     private ArrayList<Vector2D> vector2DArrayList;
-
     private String question;
 
     public Word(String word) {

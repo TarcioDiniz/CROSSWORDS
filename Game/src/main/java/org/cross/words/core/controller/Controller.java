@@ -12,6 +12,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+/*
+*
+* Class created to control all matrices and their states.
+* Your methods are private in order to use encapsulation.
+*
+*/
+
+
 public class Controller {
 
     private Matches matches;

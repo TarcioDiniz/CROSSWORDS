@@ -4,6 +4,15 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+/*
+ *
+ * This code handles printing a two-dimensional array to the console,
+ * including visual formatting and selective display of elements.
+ * It uses a series of methods and control structures to print the
+ * Array in an organized and stylized way.
+ *
+ */
+
 public class MatrixDesign {
     public static void printBoard(char[][] matrix, List<PositionValue> positions) {
         int numRows = matrix.length;
