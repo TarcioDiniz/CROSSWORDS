@@ -5,7 +5,6 @@ import com.theokanning.openai.service.OpenAiService;
 import org.cross.words.core.word.Word;
 import org.cross.words.settings.GPT_Config;
 
-
 import java.util.*;
 
 public class ChatGPT {

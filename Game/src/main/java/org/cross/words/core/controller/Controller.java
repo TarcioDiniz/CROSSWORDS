@@ -6,7 +6,6 @@ import org.cross.words.core.match.Matches;
 import org.cross.words.core.matrix.Matrix;
 import org.cross.words.core.matrix.MatrixState;
 import org.cross.words.core.word.Word;
-import org.cross.words.design.MatrixDesign;
 import org.cross.words.design.PositionValue;
 
 import java.util.ArrayList;

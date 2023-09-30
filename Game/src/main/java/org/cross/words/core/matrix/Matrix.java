@@ -3,7 +3,6 @@ package org.cross.words.core.matrix;
 import org.cross.words.Utilities.Difficulty;
 import org.cross.words.Utilities.Direction;
 import org.cross.words.Utilities.Vector2D;
-
 import org.cross.words.core.controller.Controller;
 import org.cross.words.core.word.Word;
 
@@ -94,7 +93,7 @@ public class Matrix {
                                             word.setVector2DArrayList(vector2DS);
                                             inserted = true;
                                         }
-                                    }else if (isPositionValid(calculatePositions2, centralPosition.getX_Y())) {
+                                    } else if (isPositionValid(calculatePositions2, centralPosition.getX_Y())) {
                                         if (calculatePositions2.size() == word2.getSize()) {
                                             for (int i = 0; i < word2.getSize(); i++) {
                                                 var row = (int) calculatePositions2.get(i)[0];
@@ -166,7 +165,7 @@ public class Matrix {
                     if (!(matrix[row][col] == centralChar)) {
                         ref.valid = false;
                     }
-                }else {
+                } else {
                     ref.valid = false;
                 }
             }
@@ -289,12 +288,11 @@ public class Matrix {
                 // Verifica se o caractere não é '0'
                 if (matrix[i][j] != '0') {
 
-                    if (difficulty == Difficulty.EASY){
-                        if (!Word.isVowel(matrix[i][j])){
+                    if (difficulty == Difficulty.EASY) {
+                        if (!Word.isVowel(matrix[i][j])) {
                             matrix[i][j] = ' ';
                         }
                     }
-
 
 
                 }

@@ -1,9 +1,9 @@
 package org.cross.words.design;
 
 /*
-* Credits Code:
-* Site: https://stackoverflow.com/questions/5762491/how-to-print-color-in-console-using-system-out-println
-*/
+ * Credits Code:
+ * Site: https://stackoverflow.com/questions/5762491/how-to-print-color-in-console-using-system-out-println
+ */
 
 public enum Colors {
     //Color end string, color reset

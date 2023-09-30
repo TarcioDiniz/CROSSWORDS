@@ -58,7 +58,7 @@ public class Matches {
                 .orElse(null);
     }
 
-    public int getMaxNumberOfLettersInWord(){
+    public int getMaxNumberOfLettersInWord() {
         return words.stream().mapToInt(Word::getSize).sum();
     }
 
