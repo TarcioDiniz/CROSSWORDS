@@ -5,7 +5,7 @@
 O projeto CROSSWORDS é uma aplicação que utiliza a API do Chat GPT (baseada no modelo GPT-3.5) para gerar perguntas e respostas relacionadas a palavras cruzadas. Esta aplicação permite aos usuários criar e jogar palavras cruzadas com palavras únicas geradas automaticamente e suas respectivas perguntas.
 
 
-![Demonstração](https://github.com/TarcioDiniz/CROSSWORDS/assets/106495390/b820b35d-fa7d-4d06-98d2-625a98cc12b7)
+https://github.com/TarcioDiniz/CROSSWORDS/assets/106495390/b820b35d-fa7d-4d06-98d2-625a98cc12b7
 
 
 ## Tema das Palavras Cruzadas
